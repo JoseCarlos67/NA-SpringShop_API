@@ -1,0 +1,54 @@
+# ==========================================
+# Maven Build Artifacts
+# ==========================================
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+pom.xml.bak
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Ensure the Maven wrapper jar is NOT ignored (if you use it)
+!/.mvn/wrapper/maven-wrapper.jar
+
+# ==========================================
+# IntelliJ IDEA Settings
+# ==========================================
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Keep this rule deactivated unless you want to share specific run configs
+# !.idea/runConfigurations/
+
+# ==========================================
+# Java & Spring Boot Artifacts
+# ==========================================
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+replay_pid*
+
+# Spring Tools Suite / Cache files
+.sts4-cache/
+.springBeans/
+
+# ==========================================
+# Log Files and Sensitive Information
+# ==========================================
+*.log
+logs/
+.env
+.env.local
