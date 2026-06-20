@@ -1,7 +1,6 @@
 package com.jcarlos67.SpringShop_API.services;
 
 import com.jcarlos67.SpringShop_API.entities.Order;
-import com.jcarlos67.SpringShop_API.entities.User;
 import com.jcarlos67.SpringShop_API.repositories.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
