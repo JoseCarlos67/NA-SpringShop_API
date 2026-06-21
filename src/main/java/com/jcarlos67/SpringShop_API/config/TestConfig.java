@@ -16,6 +16,8 @@ import org.springframework.context.annotation.Profile;
 
 import java.time.Instant;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
 
 @Configuration
 @Profile("test")
@@ -54,6 +56,14 @@ public class TestConfig implements CommandLineRunner {
     Product p3 = new Product( "Macbook Pro", "Nam eleifend maximus tortor, at mollis.", 1250.0, "");
     Product p4 = new Product( "PC Gamer", "Donec aliquet odio ac rhoncus cursus.", 1200.0, "");
     Product p5 = new Product( "Rails for Dummies", "Cras fringilla convallis sem vel faucibus.", 100.99, "");
+
+    productRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5));
+
+    p1.getCategories().add(cat2);
+    p2.getCategories().addAll(List.of(cat1, cat3));
+    p3.getCategories().add(cat3);
+    p4.getCategories().add(cat3);
+    p5.getCategories().add(cat2);
 
     productRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5));
   }
