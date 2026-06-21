@@ -31,7 +31,7 @@ public class Order implements Serializable {
   }
 
   public Order(Instant moment, OrderStatus orderStatus, User client) {
-    this.id = null;
+    id = null;
     this.moment = moment;
     setOrderStatus(orderStatus);
     this.client = client;
