@@ -53,4 +53,4 @@ logs/
 .env
 .env.local
 
-application-dev.properties
+src/main/resources/application-dev.properties
