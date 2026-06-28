@@ -1,30 +1,43 @@
 # NA-SpringShop_API
 
-Uma API RESTful completa para simulação de um sistema de e-commerce e gestão de pedidos.
-
-## 🎯 Objetivos do Projeto
-* Criar um projeto Spring Boot em Java.
-* Implementar um modelo de domínio.
-* Estruturar as camadas lógicas da aplicação: `Resource` (controladores REST), `Service` e `Repository` (acesso a dados).
-* Configurar o banco de dados H2 Oracle Database para testes e produção respectivamente.
-* Povoar o banco de dados (Database Seeding).
-* Implementar operações de CRUD (Create, Retrieve, Update, Delete).
-* Realizar o tratamento de exceções de forma personalizada.
-
-## 🚀 Tecnologias Utilizadas
-* **Java** * **Spring Boot** * **Maven** * **JPA / Hibernate** * **Oracle Database**
-* **Apache Tomcat** (Servidor embutido)
-* **Bruno** (API Client para testes de requisições)
-* **Heroku** (Plataforma de Deploy)
-
-## 🏗️ Modelo de Domínio
-O sistema gerencia as seguintes entidades e relacionamentos:
-* **User:** Representa o cliente (id, name, email, phone, password).
-* **Order:** Representa o pedido, associado a um cliente e contendo o status do pedido (WAITING_PAYMENT, PAID, SHIPPED, DELIVERED, CANCELED).
-* **Product:** Representa os produtos disponíveis para venda.
-* **Category:** Categoria dos produtos (relacionamento *Many-to-Many* com Product).
-* **OrderItem:** Item de pedido, que funciona como classe de associação entre `Order` e `Product`, registrando quantidade e preço no momento da compra.
-* **Payment:** Pagamento associado a um pedido (relacionamento *One-to-One*).
+Uma API RESTful completa para simulação de um sistema de e-commerce e gestão de pedidos, construída com boas práticas de engenharia de software e arquitetura em camadas.
 
 ---
+## 🐳 Executando com Docker (Recomendado)
 
+Este projeto está totalmente containerizado. Para testá-lo localmente, **você não precisa ter o Java, o Maven ou o Oracle Database instalados na sua máquina**. Basta possuir o [Docker](https://www.docker.com/) e rodar o comando abaixo na raiz do repositório:
+
+```bash
+# 1. Clone o repositório
+git clone [https://github.com/JoseCarlos67/NA-SpringShop_API.git](https://github.com/JoseCarlos67/NA-SpringShop_API.git)
+cd NA-SpringShop_API
+
+# 2. Suba o ambiente completo (API + Banco de Dados Oracle)
+docker compose up -d --build
+```
+
+🛠️ Tecnologias Utilizadas
+* Java 21
+* Spring Boot 3
+* Maven
+* JPA / Hibernate
+* Oracle Database (gvenzl/oracle-free container image)
+* Docker 
+* Bruno (API Client para testes de endpoints)
+
+📐 Modelo de Domínio
+O sistema gerencia as seguintes entidades e seus respectivos relacionamentos:
+
+User: Representa o cliente do e-commerce (id, name, email, phone, password).
+
+Order: Pedido realizado, associado a um cliente e contendo o status de fluxo da compra (WAITING_PAYMENT, PAID, SHIPPED, DELIVERED, CANCELED).
+
+Product: Produtos disponíveis no catálogo de vendas.
+
+Category: Categorias dos produtos (Relacionamento Many-to-Many com Product).
+
+OrderItem: Classe de associação entre Order e Product, garantindo o histórico do preço e quantidade exata no momento em que a compra foi fechada.
+
+Payment: Registro de pagamento associado a um pedido (Relacionamento One-to-One).
+
+Desenvolvido por José Carlos como parte do portfólio de Engenharia de Software.
