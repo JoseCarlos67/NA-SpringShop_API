@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: dev
+      POSTGRES_PASSWORD: postgresql-01
+      POSTGRES_DB: springshop
+    ports:
+      - "5432:5432"
